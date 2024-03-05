@@ -25,7 +25,7 @@ curl --location --request GET 'https://categorization.dev/api/v1/website/categor
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 --data-urlencode 'classification=taxonomy_v3' \
---data-urlencode 'query=https://airbus.com'
+--data-urlencode 'query=https://airbus.com' \
 ```
 
 ```bash NAICS Example Request
@@ -33,7 +33,7 @@ curl --location --request GET 'https://categorization.dev/api/v1/website/categor
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <token>' \
 --data-urlencode 'classification=naics' \
---data-urlencode 'query=https://airbus.com'
+--data-urlencode 'query=https://airbus.com' \
 ```
 
 </RequestExample>
@@ -105,9 +105,7 @@ curl --location --request GET 'https://categorization.dev/api/v1/website/categor
     ]
 }
 ```
-</ResponseExample>
 
-<ResponseExample>
 ```json NAICS Response Example
 {
     "naics": [
