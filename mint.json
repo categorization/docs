@@ -55,8 +55,8 @@
     {
       "group": "Endpoints",
       "pages": [
-        "api-reference/endpoints/profile",
-        "api-reference/endpoints/company",
+        "api-reference/endpoints/website_categorization",
+        "api-reference/endpoints/website_extractor",
         "api-reference/usage"
       ]
     }

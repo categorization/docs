@@ -1,0 +1,93 @@
+---
+title: "Website Extractor (Email & Phone)"
+api: "GET https://categorization.dev/api/v1/website/email_phone_extractor"
+description: "This endpoint allows you to extract email and phone number from a website."
+---
+
+Enter a URL, and the crawler will begin to extract info and click on links (“a” anchors). These are some types of information that this contact details crawler can extract:
+
+- Email
+- Phone numbers (with a real time phone number validation)
+- LinkedIn
+- Twitter
+- Instagram
+- Facebook
+- TikTok
+- Pinterest
+- Snapchat
+- YouTube
+- Reddit
+- Telegram
+- Crunchbase
+
+## Personal data and the legality of scraping contact information
+
+You should be aware that your results might contain personal data. Personal data is protected by GDPR in the European Union and by other regulations around the world. You should not scrape personal data unless you have a legitimate reason to do so. If you're unsure whether your reason is legitimate, consult your lawyers.
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    This parameter specifies the private key you'll need for Categorization.dev access.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" optional={false} placeholder="https://www.hexa.cc">
+    A website url with `http://` or `https://` protocol.
+</ParamField>
+
+<ParamField query="country_code" type="string" optional={true} placeholder="FR">
+    The country_code parameter enhances the accuracy of results for the `phone_numbers` attribute.
+    Use this parameter to filter results based on a specific country code.
+    For example, if you are looking for phone numbers in the United States, use the country code `US` to refine the results.
+</ParamField>
+
+### Response
+
+<RequestExample>
+
+```bash Request Example
+curl --location --request GET 'https://categorization.dev/api/v1/website/email_phone_extractor?query=https://www.hexa.cc' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Response Example
+{
+    "emails": [
+        "love@hexa.cc"
+    ],
+    "phone_numbers": [
+        {
+            "e164": "+33484xxxxxx",
+            "local": "04 84 xx xx xx",
+            "valid": true,
+            "country": "FR",
+            "rawLocal": "0484xxxxxx",
+            "countryCode": 33,
+            "international": "33484xxxxxx"
+        },
+    ],
+    "linkedin_profiles": [
+        "https://www.linkedin.com/company/hexacc/"
+    ],
+    "twitter_profiles": [
+        "https://twitter.com/hexacc"
+    ],
+    "instagram_profiles": [
+        "https://www.instagram.com/hexa.cc/"
+    ],
+    "facebook_profiles": [],
+    "tiktok_profiles": [],
+    "pinterest_profiles": [],
+    "snapchat_profiles": [],
+    "youtube_channels": [],
+    "reddit_profiles": [],
+    "telegram_channels": [],
+    "crunchbase_profiles": []
+}
+```
+</ResponseExample>

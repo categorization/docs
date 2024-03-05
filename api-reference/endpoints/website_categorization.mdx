@@ -1,0 +1,118 @@
+---
+title: "Website Categorization"
+api: "GET https://categorization.dev/api/v1/website/categorization"
+description: "This endpoint allows you to categorize a website : naics or taxonomy."
+---
+
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    This parameter specifies the private key you'll need for Categorization.dev access.
+</ParamField>
+
+### Parameters
+
+#### Search Query
+
+<ParamField query="query" type="string" required={true} default="https://airbus.com">
+    A website url with `http://` or `https://` protocol.
+</ParamField>
+
+```bash Taxonomy v3 Example Request
+curl --location --request GET 'https://categorization.dev/api/v1/website/categorization' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+--data-urlencode 'classification=taxonomy_v3' \
+--data-urlencode 'query=https://airbus.com'
+```
+
+```bash NAICS Example Request
+curl --location --request GET 'https://categorization.dev/api/v1/website/categorization' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: <token>' \
+--data-urlencode 'classification=naics' \
+--data-urlencode 'query=https://airbus.com'
+```
+
+</RequestExample>
+
+<ResponseExample>
+```json Taxonomy v3 Response Example
+{
+    "taxonomy_v3": [
+        {
+            "value": "Business and Finance > Industries > Aviation Industry",
+            "confidence": 0.9
+        },
+        {
+            "value": "Science and Technology > Aerospace",
+            "confidence": 0.9
+        },
+        {
+            "value": "Automotive > Auto Type > Concept Cars",
+            "confidence": 0.8
+        },
+        {
+            "value": "Business and Finance > Industries > Defense Industry",
+            "confidence": 0.8
+        },
+        {
+            "value": "Business and Finance > Industries > Space Industry",
+            "confidence": 0.8
+        },
+        {
+            "value": "Automotive > Auto Technology > Auto Safety Technologies",
+            "confidence": 0.7
+        },
+        {
+            "value": "Automotive > Auto Technology > Auto Infotainment Technologies",
+            "confidence": 0.7
+        },
+        {
+            "value": "Automotive > Auto Technology > Auto Navigation Systems",
+            "confidence": 0.7
+        },
+        {
+            "value": "Automotive > Auto Type > Green Vehicles",
+            "confidence": 0.7
+        },
+        {
+            "value": "Business and Finance > Industries > Technology Industry",
+            "confidence": 0.7
+        },
+        {
+            "value": "Business and Finance > Industries > Telecommunications Industry",
+            "confidence": 0.7
+        },
+        {
+            "value": "Automotive > Auto Type > Driverless Cars",
+            "confidence": 0.6
+        },
+        {
+            "value": "Science and Technology > Robotics",
+            "confidence": 0.6
+        },
+        {
+            "value": "Science and Technology > Artificial Intelligence",
+            "confidence": 0.6
+        },
+        {
+            "value": "Science and Technology > Quantum Computing",
+            "confidence": 0.5
+        }
+    ]
+}
+```
+
+```json NAICS Response Example
+{
+    "naics": [
+        {
+            "title": "Aircraft Manufacturing",
+            "value": "336411",
+            "confidence": 0.95
+        }
+    ]
+}
+```
+</ResponseExample>
