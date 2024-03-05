@@ -18,6 +18,8 @@ description: "This endpoint allows for categorizing websites based on NAICS (Nor
     A website url with `http://` or `https://` protocol.
 </ParamField>
 
+<RequestExample>
+
 ```bash Taxonomy v3 Example Request
 curl --location --request GET 'https://categorization.dev/api/v1/website/categorization' \
 --header 'Content-Type: application/json' \
@@ -103,7 +105,9 @@ curl --location --request GET 'https://categorization.dev/api/v1/website/categor
     ]
 }
 ```
+</ResponseExample>
 
+<ResponseExample>
 ```json NAICS Response Example
 {
     "naics": [
