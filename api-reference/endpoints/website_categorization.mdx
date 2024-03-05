@@ -16,14 +16,14 @@ description: "This endpoint allows for categorizing websites based on NAICS (Nor
     A website url with `http://` or `https://` protocol.
 </ParamField>
 
-<ParamField query="classification" type="string" required={true} default="taxonomy_v3">
+<ParamField query="classification" type="string" required={true} default="naics">
     The classification parameter specifies the type of categorization to be used. It can be either `taxonomy_v3` or `naics`.
 </ParamField>
 
 
 ### Supported taxonomies
 
-- `taxonomy_v3`: A hierarchical taxonomy that categorizes websites into a set of categories and subcategories : (with 703 categories)[/api-reference/taxonomy_v3]
+- `taxonomy_v3`: A hierarchical taxonomy that categorizes websites into a set of categories and subcategories : [with 703 categories](/api-reference/taxonomy_v3)
 
 <RequestExample>
 
