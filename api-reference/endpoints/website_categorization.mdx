@@ -26,26 +26,6 @@ description: "This endpoint allows for categorizing websites based on NAICS (Nor
 - `taxonomy_v3`: A hierarchical taxonomy that categorizes websites into a set of categories and subcategories : [with 703 categories](/api-reference/website_taxonomy_v3)
 - `naics`: A classification system used by the United States, Canada, and Mexico to classify businesses by industry sector : [census.gov naics](https://www.census.gov/naics/)
 
-<RequestExample>
-
-```bash Taxonomy v3 Example Request
-curl --location --request GET 'https://categorization.dev/api/v1/website/categorization' \
---header 'Content-Type: application/json' \
---header 'x-api-key: <token>' \
---data-urlencode 'classification=taxonomy_v3' \
---data-urlencode 'query=https://airbus.com' \
-```
-
-```bash NAICS Example Request
-curl --location --request GET 'https://categorization.dev/api/v1/website/categorization' \
---header 'Content-Type: application/json' \
---header 'x-api-key: <token>' \
---data-urlencode 'classification=naics' \
---data-urlencode 'query=https://airbus.com' \
-```
-
-</RequestExample>
-
 <ResponseExample>
 ```json Taxonomy v3 Response Example
 {
