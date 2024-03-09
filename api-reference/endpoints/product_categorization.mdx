@@ -16,7 +16,7 @@ description: "This endpoint allows for categorizing products based on Google Pro
     A website url with `http://` or `https://` protocol or a product title.
 </ParamField>
 
-<ParamField query="classification" type="string" required={true} placeholder="product_taxonomy", default="product_taxonomy">
+<ParamField query="classification" type="string" required={true} placeholder="product_taxonomy" default="product_taxonomy">
     The classification parameter specifies the type of categorization to be used. It can be either `product_taxonomy` or `product_taxonomy_custom_xxxx`, contact us for custom classification.
 </ParamField>
 
@@ -24,3 +24,16 @@ description: "This endpoint allows for categorizing products based on Google Pro
 ### Supported classifications
 
 - `product_taxonomy`: A hierarchical taxonomy that categorizes websites into a set of categories and subcategories : [with 5677 categories](/api-reference/product_taxonomy)
+
+<ResponseExample>
+```json Response Example
+{
+    "product_taxonomy": [
+        {
+            "value": "Apparel & Accessories > Shoes",
+            "confidence": 0.95
+        }
+    ]
+}
+```
+</ResponseExample>
