@@ -4,4 +4,23 @@ api: "GET https://categorization.dev/api/v1/product/categorization"
 description: "This endpoint allows for categorizing products based on Google Product Taxonomy."
 ---
 
-Hey
+### Header
+
+<ParamField header="x-api-key" type="string" required={true}>
+    This parameter specifies the private key you'll need for Categorization.dev access.
+</ParamField>
+
+### Parameters
+
+<ParamField query="query" type="string" required={true} placeholder="https://airbus.com">
+    A website url with `http://` or `https://` protocol or a product title.
+</ParamField>
+
+<ParamField query="classification" type="string" required={true} placeholder="product_taxonomy", default="product_taxonomy">
+    The classification parameter specifies the type of categorization to be used. It can be either `product_taxonomy` or `product_taxonomy_custom_xxxx`, contact us for custom classification.
+</ParamField>
+
+
+### Supported classifications
+
+- `product_taxonomy`: A hierarchical taxonomy that categorizes websites into a set of categories and subcategories : [with 5677 categories](/api-reference/product_taxonomy)
