@@ -64,7 +64,8 @@
     {
       "group": "Resources",
       "pages": [
-        "api-reference/taxonomy_v3"
+        "api-reference/website_taxonomy_v3",
+        "api-reference/product_taxonomy"
       ]
     }
   ],
